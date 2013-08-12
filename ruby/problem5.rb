@@ -7,7 +7,7 @@ while searching
     searching = false
   end
   puts prospect
-  prospect += 10
+  prospect += 20
 end
 puts "Took #{(Time.now - start_time)} seconds"
 puts answer
