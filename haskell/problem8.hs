@@ -2,10 +2,10 @@ num = "7316717653133062491922511967442657474235534919493496983520312774506326239
 
 stringToIntList :: [Char] -> [Int]
 stringToIntList xs = map (read . (:"")) xs :: [Int]
-takeAmount :: Int -> [Int] -> [Int]
-takeAmount x [] = []
-takeAmount x xs = do
-  let prod = product $ take x xs
-  prod : takeAmount x (tail xs)
+productOfTake :: Int -> [Int] -> Int
+productOfTake x xs = product $ take x xs
+concatProducts :: Int -> [Int] -> [Int]
+concatProducts x [] = []
+concatProducts x xs = productOfTake x xs : concatProducts x (tail xs)
 
-maximum $ takeAmount 5 $ stringToIntList num
+maximum $ concatProducts 5 $ stringToIntList num
