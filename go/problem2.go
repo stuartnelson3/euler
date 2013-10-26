@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// 144ms runtime
 func fib(n int) int {
     if n == 0 || n == 1 {
         return n
